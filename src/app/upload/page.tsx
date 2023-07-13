@@ -5,7 +5,8 @@ import { UploadButton } from "@/lib/uploadthing";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex min-h-screen items-center justify-center">
+      <span className="font-bold p-2 mr-2">Upload a photo: </span>
       <UploadButton
         endpoint="imageUploader"
         onClientUploadComplete={(res: any) => {

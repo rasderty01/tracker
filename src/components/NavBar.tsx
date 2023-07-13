@@ -9,8 +9,21 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "./ui/navigation-menu";
+import {
+  SignInButton,
+  UserButton,
+  auth,
+  currentUser,
+  useAuth,
+} from "@clerk/nextjs";
+import { useEffect, useState } from "react";
+import { set } from "zod";
 
 const NavBar = () => {
+  const { isLoaded, userId, sessionId, getToken } = useAuth();
+
+  console.log(sessionId);
+
   return (
     <div className="w-full items-center justify-between font-mono text-sm lg:flex py-2 border-b-2">
       <NavigationMenu className="ml-10">
@@ -37,7 +50,13 @@ const NavBar = () => {
             </NavigationMenuLink>
           </Link>
         </NavigationMenuList>
+        <NavigationMenuList>
+          <NavigationMenuLink></NavigationMenuLink>
+        </NavigationMenuList>
       </NavigationMenu>
+      <div className="mr-10 hover:underline underline-offset-4">
+        {userId ? <UserButton afterSignOutUrl="/" /> : <SignInButton />}
+      </div>
     </div>
   );
 };
