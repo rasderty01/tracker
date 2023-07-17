@@ -1,8 +1,5 @@
 /* eslint-disable @next/next/no-async-client-component */
 
-import { db } from "@/lib/db";
-import { myTable } from "@/lib/db/schema";
-
 import ComponentTable from "@/components/Data-Table/ComponentTable";
 
 export default function Home() {
