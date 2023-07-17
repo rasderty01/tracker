@@ -22,6 +22,8 @@ import {
 // You can use a Zod schema here if you want.
 export type History = {
   id: number;
+  user: string;
+  filekey: string;
   createdAt: string;
   link: string;
 };
@@ -69,6 +71,15 @@ export const columns: ColumnDef<History>[] = [
     },
   },
   {
+    accessorKey: "user",
+    header: () => <div className="text-center">User</div>,
+    cell: ({ row }) => {
+      const { user } = row.original;
+
+      return <div className="text-center">{user}</div>;
+    },
+  },
+  {
     accessorKey: "link",
     header: () => (
       <div className="text-center flex flex-col items-center">Link</div>
@@ -82,7 +93,7 @@ export const columns: ColumnDef<History>[] = [
           className=" text-blue-500 hover:underline underline-offset-4 py-2 px-4 rounded transition-all ease-in-out duration-300"
           target="_blank"
         >
-          {row.original.link}
+          {row.original.filekey}
         </Link>
       );
     },

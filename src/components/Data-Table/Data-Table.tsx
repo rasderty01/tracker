@@ -43,6 +43,7 @@ import {
 import { useUploadThing } from "@/lib/uploadthing";
 import { Progress } from "../ui/progress";
 import { set } from "date-fns";
+import DialogUpoader from "../DialogUploader/DialogUpoader";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -87,10 +88,10 @@ export function DataTable<TData, TValue>({
           }
           className="max-w-sm"
         />
-
+        <DialogUpoader />
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="outline" className="ml-auto">
+            <Button variant="default" className="ml-auto">
               View Options
             </Button>
           </DropdownMenuTrigger>

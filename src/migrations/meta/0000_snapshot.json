@@ -1,11 +1,11 @@
 {
   "version": "5",
   "dialect": "mysql",
-  "id": "e361a570-021f-4325-bd16-50e9623ad6f4",
+  "id": "990f5b8b-6d26-43a2-8a59-dbf33e8adea5",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
-    "myTable": {
-      "name": "myTable",
+    "Users": {
+      "name": "Users",
       "columns": {
         "id": {
           "name": "id",
@@ -13,6 +13,20 @@
           "primaryKey": true,
           "notNull": true,
           "autoincrement": true
+        },
+        "userid": {
+          "name": "userid",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "fileKey": {
+          "name": "fileKey",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
         },
         "link": {
           "name": "link",

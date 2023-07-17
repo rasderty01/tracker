@@ -6,8 +6,7 @@ export default authMiddleware({
       return redirectToSignIn({ returnBackUrl: req.url });
     }
   },
-
-  publicRoutes: ["/", "/api/uploadthing"],
+  publicRoutes: ["/", "/api(.*)"],
 });
 
 export const config = {

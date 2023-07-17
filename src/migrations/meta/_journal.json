@@ -5,22 +5,8 @@
     {
       "idx": 0,
       "version": "5",
-      "when": 1689249279020,
-      "tag": "0000_mighty_patch",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "5",
-      "when": 1689254299861,
-      "tag": "0001_strange_morlocks",
-      "breakpoints": true
-    },
-    {
-      "idx": 2,
-      "version": "5",
-      "when": 1689257988788,
-      "tag": "0002_bouncy_colonel_america",
+      "when": 1689517084417,
+      "tag": "0000_mature_master_chief",
       "breakpoints": true
     }
   ]

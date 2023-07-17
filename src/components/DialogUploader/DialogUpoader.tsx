@@ -14,12 +14,11 @@ import React, { useState, useRef } from "react";
 import { Button } from "../ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Input } from "@/components/ui/input";
-import { useToast } from "../ui/use-toast";
+import { toast } from "react-hot-toast";
 
 const DialogUpoader = () => {
   const [file, setFile] = useState<File | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
-  const { toast } = useToast();
 
   const [progress, setProgress] = React.useState(0);
 
@@ -31,22 +30,14 @@ const DialogUpoader = () => {
     },
     onClientUploadComplete: () => {
       setProgress(0);
-      toast({
-        title: "Success!",
-        description: "Your file has been uploaded.",
-        variant: "success",
+      toast.success("Upload complete", {
+        position: "top-right",
       });
-
-      //insert toast.success
     },
     onUploadError: (e) => {
-      toast({
-        title: "Error!",
-        description: `${e}: An error occurred while uploading.`,
-        variant: "destructive",
+      toast.error(`${e}: Upload failed`, {
+        position: "top-right",
       });
-
-      //insert toast.error
     },
   });
 
