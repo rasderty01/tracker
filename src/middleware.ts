@@ -6,7 +6,7 @@ export default authMiddleware({
       return redirectToSignIn({ returnBackUrl: req.url });
     }
   },
-  publicRoutes: ["/", "/api(.*)"],
+  publicRoutes: ["/sign-up(.*)", "/sign-in(.*)", "/api(.*)"],
 });
 
 export const config = {
